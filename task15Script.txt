@@ -1,0 +1,52 @@
+
+
+2.Write a Selenium script in Java to open Google and search for "Selenium Browser Driver." 
+
+package com.util2;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Task15 {
+
+	public static void main(String[] args) {
+	
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.google.com/");
+		driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys("selenium browser driver");
+		
+		driver.findElement(By.xpath("//div[@class='lJ9FBc']//input[@name='btnK']")).click();
+	
+	}
+
+}
+
+
+
+
+5.What Are The Steps To Create A Simple Web Driver Script?Explain with code. 
+
+1.setupwebdriver
+2.create the object for chrome driver and assign to webdriver interface
+3.use the method of WebDriver we can write the script to automate the tool.
+
+public class Task15 {
+
+	public static void main(String[] args) {
+	
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver driver=new ChromeDriver();
+
+                driver.get("https://google.com");
+		
+		String title=driver.getTitle();
+		System.out.println(title);
+}}
+
